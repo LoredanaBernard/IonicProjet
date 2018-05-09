@@ -20,6 +20,7 @@ export class MenuPage {
   }
 
   openPage(page: Page) {
+    this.navCtrl.push(page);
     
   }
  

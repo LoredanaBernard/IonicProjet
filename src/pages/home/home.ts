@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { ProfilPage } from '../profil/profil';
 import { User } from '../../model/User';
+import { Events } from 'ionic-angular';
 
 import *as firebase from 'firebase';
+import { Page } from 'ionic-angular/navigation/nav-util';
 
 /**
  * Generated class for the HomePage page.
@@ -16,19 +18,22 @@ import *as firebase from 'firebase';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
+  
 })
 export class HomePage {
   readonly TAG:String ='HomePage';
   ref : firebase.database.Reference;
-  user: User;
+  public  user: User;
 
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
-              public menuCtrl: MenuController) {
+              public menuCtrl: MenuController,
+              public events: Events) {
     this.user = navParams.get("user");
     this.ref= firebase.database().ref('User/'+ this.user.id);
     console.log(`${this.TAG} utilisateur : ${this.user.id}`);
+    this.events.publish('user:created', this.user, Date.now());
    // this.navCtrl.setRoot(HomePage);
              
                 // Récupération de l'utilisateur dans BDD
@@ -42,6 +47,13 @@ export class HomePage {
 
   }
 
+  openMenu(){
+    this.menuCtrl.open();
+  }
+
+  openPage(page: Page){
+    this.navCtrl.push(page);
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   }

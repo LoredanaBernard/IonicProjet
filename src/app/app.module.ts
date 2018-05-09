@@ -14,7 +14,8 @@ import { ModifAnimalPage } from '../pages/modif-animal/modif-animal';
 
 import { SplashPage } from '../pages/splashScreen/splash/splash';
 import { ConnexionPage } from '../pages/connexion/connexion';
-import { AnnoncePage } from '../pages/annonce/annonce';
+import { ProfilPage } from '../pages/profil/profil';
+
 
 
 
@@ -24,8 +25,7 @@ import { AnnoncePage } from '../pages/annonce/annonce';
     ConnexionPage,
     ModifAnimalPage,
     SplashPage,
-    AnnoncePage
-
+    ProfilPage
     
 
   ],
@@ -39,8 +39,7 @@ import { AnnoncePage } from '../pages/annonce/annonce';
     ConnexionPage,
     ModifAnimalPage,
     SplashPage,
-    AnnoncePage
-  
+    ProfilPage
   
   ],
   providers: [

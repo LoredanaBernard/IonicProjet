@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, AlertController, MenuController } from 'ionic-angular';
 import { User } from '../../model/User';
 import *as firebase from 'firebase';
-import { AnnoncePage } from '../annonce/annonce';
 
 
 @IonicPage()

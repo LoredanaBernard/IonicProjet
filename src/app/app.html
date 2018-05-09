@@ -1,4 +1,4 @@
-<ion-menu [content]="content">
+<!--<ion-menu [content]="content">
     <ion-content padding>
         <ion-list>
             <ion-item >Annonces</ion-item>
@@ -12,6 +12,32 @@
 
     </ion-content>
     
-</ion-menu>
+</ion-menu>-->
 
-<ion-nav [root]="rootPage" #content></ion-nav>
+<ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <button ion-item (click)="openHome()">
+          Home
+        </button>
+        <button ion-item (click)="openProfil()">
+          Profil
+        </button>
+        <button ion-item (click)="openConnexion()">
+          Connexion
+        </button>
+        <button ion-item (click)="closeMenu()">
+          Close Menu
+        </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+  <ion-nav id="nav" #content [root]="rootPage"></ion-nav>
+
+
