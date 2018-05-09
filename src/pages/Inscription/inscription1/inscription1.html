@@ -1,0 +1,30 @@
+<!--
+  Generated template for the Inscription1Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>inscription 1/3</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+        <ion-label>Nom</ion-label>
+        <ion-input type="text" [(ngModel)]="nom"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Prénom</ion-label>
+        <ion-input type="text" [(ngModel)]="prenom"></ion-input>
+      </ion-item>
+
+      <ion-fab right bottom>
+          <button ion-fab color="light" (click)='onClickPageSuivante(nom,prenom)'><ion-icon name="arrow-dropright"></ion-icon></button>         
+    </ion-fab>
+</ion-content>

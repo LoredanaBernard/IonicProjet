@@ -1,0 +1,17 @@
+<ion-menu [content]="content">
+    <ion-content padding>
+        <ion-list>
+            <ion-item >Annonces</ion-item>
+            <ion-item>Veterinaire</ion-item>
+            <ion-item>Mon profil</ion-item>
+            <ion-item>Mes messages</ion-item>
+            <ion-item>Mes paramètres</ion-item>
+            <ion-item>A propos</ion-item>
+            <ion-item menuClose detail-none>Close Menu</ion-item>
+          </ion-list>
+
+    </ion-content>
+    
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

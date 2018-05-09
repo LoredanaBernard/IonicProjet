@@ -1,0 +1,75 @@
+
+ <ion-header>
+
+    <ion-navbar>
+      <ion-buttons end>
+        <button ion-button>
+          <ion-icon name="contact"></ion-icon>
+        </button>
+      </ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        Connexion
+      </ion-title>
+     <ion-buttons start>
+        <button ion-button (click)="doClick()">
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>  
+  </ion-header>
+
+  
+<!--<ion-header>
+
+    <ion-navbar color="primary">
+      <ion-buttons start>
+        <button ion-button>
+          <ion-icon name="contact"></ion-icon>
+        </button>
+      </ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        Connexion
+      </ion-title>
+    </ion-navbar>  
+  </ion-header>-->
+
+  
+
+  <!-- <ion-header>
+        
+
+  <ion-navbar color="primary">
+    <ion-title>Connexion</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+
+
+<ion-content padding>
+    <ion-item>
+        <ion-label>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="username"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+    
+    
+    
+    <div padding>
+      <button ion-button color="secondary" (click)="onClickConnect(username,password)">Connexion</button>
+      <button ion-button color="primary" (click)="onClickRegister(username,password)">S'inscrire</button>
+      
+    </div>
+
+</ion-content>
+
+

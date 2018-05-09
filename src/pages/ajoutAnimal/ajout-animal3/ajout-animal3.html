@@ -1,0 +1,31 @@
+<!--
+  Generated template for the AjoutAnimal3Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ajoutAnimal3</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+        <ion-label>Age</ion-label>
+        <ion-input type="number" [(ngModel)]="age"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Sexe</ion-label>
+        <ion-select  [(ngModel)]="gender">
+          <ion-option>Femelle</ion-option>
+          <ion-option>Male</ion-option>
+        </ion-select>
+      </ion-item>
+    <ion-fab right bottom>
+        <button ion-fab color="light" (click)='onClickValiderAjout(age,gender)'><ion-icon name="checkmark"></ion-icon></button>         
+  </ion-fab>
+</ion-content>

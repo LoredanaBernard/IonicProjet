@@ -1,0 +1,16 @@
+page-profil-animal {
+
+    .align-centre{
+      
+    }
+    
+    .btnRond{
+        padding-top: 0;
+        padding-block-end: 2.6rem;
+        padding-bottom: round($number: 0);
+        padding-block-start: round($number: 0);
+        border-radius: 64px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
