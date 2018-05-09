@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform , Nav, Events } from 'ionic-angular';
+import { Platform , Nav, Events, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import *as firebase from 'firebase';
@@ -14,6 +14,9 @@ import { AjoutAnimal3Page } from '../pages/ajoutAnimal/ajout-animal3/ajout-anima
 import { SplashPage } from '../pages/splashScreen/splash/splash';
 import { ConnexionPage } from '../pages/connexion/connexion';
 import { User } from '../model/User';
+import { AnnoncesPage } from '../pages/Annonces/annonces';
+import { VeterinairePage } from '../pages/veterinaire/veterinaire';
+import { InformationsPage } from '../pages/informations/informations';
 
 
 
@@ -27,7 +30,7 @@ export class MyApp {
   @ViewChild(Nav) private nav: Nav;
 
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public events: Events) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public events: Events,public menuCtrl: MenuController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -53,13 +56,30 @@ export class MyApp {
 
   public openConnexion() {
     this.nav.setRoot(ConnexionPage,{user: this.userHome});
+    this.menuCtrl.close();
 }
 
 public openHome(){
   this.nav.setRoot(HomePage,{user: this.userHome});
+  this.menuCtrl.close();
 }
 public openProfil(){
   this.nav.setRoot(ProfilPage,{user: this.userHome});
+  this.menuCtrl.close();
+}
+
+public openAnnonces(){
+  this.nav.setRoot(AnnoncesPage,{user: this.userHome});
+  this.menuCtrl.close();
+}
+public openVeto(){
+  this.nav.setRoot(VeterinairePage,{user: this.userHome});
+  this.menuCtrl.close();
+}
+
+public openInfo(){
+  this.nav.setRoot(InformationsPage,{user: this.userHome});
+  this.menuCtrl.close();
 }
   
 }

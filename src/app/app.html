@@ -15,23 +15,36 @@
 </ion-menu>-->
 
 <ion-menu [content]="content">
-    <ion-header>
-      <ion-toolbar>
+    <ion-header >
+      <ion-toolbar color="primary">
         <ion-title>Menu</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
+            <img src="assets/imgs/veto.png"/>
       <ion-list>
         <button ion-item (click)="openHome()">
-          Home
+                <ion-icon name="home"></ion-icon> &nbsp; Home
+        </button>
+        <button ion-item (click)="openAnnonces()">
+                <ion-icon name="paper"></ion-icon> &nbsp; Annonces
+        </button>
+        <button ion-item (click)="openVeto()">
+                <ion-icon name="paw"></ion-icon> &nbsp; Vétérinaire
         </button>
         <button ion-item (click)="openProfil()">
-          Profil
+                <ion-icon name="contact"></ion-icon> &nbsp; Mon profil
         </button>
-        <button ion-item (click)="openConnexion()">
-          Connexion
+        <button ion-item (click)="openHome()">
+            <ion-icon name="chatbubbles"></ion-icon> &nbsp; Mes messages
         </button>
-        <button ion-item (click)="closeMenu()">
+        <button ion-item (click)="openHome()">
+                <ion-icon name="construct"></ion-icon> &nbsp; Mes paramètres
+        </button>
+        <button ion-item (click)="openInfo()">
+                <ion-icon name="information-circle"></ion-icon> &nbsp;Informations
+        </button>
+        <button ion-item (click)="closeMenu()"> &nbsp;
           Close Menu
         </button>
       </ion-list>

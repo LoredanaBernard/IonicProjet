@@ -15,6 +15,9 @@ import { ModifAnimalPage } from '../pages/modif-animal/modif-animal';
 import { SplashPage } from '../pages/splashScreen/splash/splash';
 import { ConnexionPage } from '../pages/connexion/connexion';
 import { ProfilPage } from '../pages/profil/profil';
+import { AnnoncesPage } from '../pages/Annonces/annonces';
+import { VeterinairePage } from '../pages/veterinaire/veterinaire';
+import { InformationsPage } from '../pages/informations/informations';
 
 
 
@@ -25,9 +28,12 @@ import { ProfilPage } from '../pages/profil/profil';
     ConnexionPage,
     ModifAnimalPage,
     SplashPage,
-    ProfilPage
-    
+    ProfilPage,
+    AnnoncesPage,
+    VeterinairePage,
+    InformationsPage
 
+    
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,10 @@ import { ProfilPage } from '../pages/profil/profil';
     ConnexionPage,
     ModifAnimalPage,
     SplashPage,
-    ProfilPage
+    ProfilPage,
+    AnnoncesPage,
+    VeterinairePage,
+    InformationsPage
   
   ],
   providers: [
