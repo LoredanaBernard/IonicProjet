@@ -12,14 +12,30 @@
 -->
 
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>ajoutAnnonce</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Ajouter une annonce</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+    <ion-item>
+        <ion-label color="primary">Type d'annonce</ion-label>
+        <ion-select  [(ngModel)]="type">
+          <ion-option>Animal perdu</ion-option>
+          <ion-option>Animal trouvé</ion-option>
+          <ion-option>Animal à donner</ion-option>
+          <ion-option>Autre</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Titre</ion-label>
+          <ion-input type="text" [(ngModel)]="titre"></ion-input>
+      </ion-item>
+
+    <ion-fab right bottom>
+          <button ion-fab color="light" (click)='onClickPageSuivante(type, titre)'><ion-icon name="arrow-dropright"></ion-icon></button>         
+    </ion-fab>
 
 </ion-content>

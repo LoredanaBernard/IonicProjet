@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from '../../../model/User';
 import *as firebase from 'firebase';
+import { Annonce } from '../../../model/Annonce';
 /**
  * Generated class for the AjoutAnnoncePage page.
  *
@@ -17,6 +18,7 @@ import *as firebase from 'firebase';
 export class AjoutAnnoncePage {
   readonly TAG:String ='AjoutAnnoncePage';
   user: User;
+  annonce: Annonce;
   ref : firebase.database.Reference; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -26,6 +28,19 @@ export class AjoutAnnoncePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AjoutAnnoncePage');
+  }
+
+  onClickPageSuivante(type: string, titre: string){
+    this.annonce = new Annonce();
+    this.annonce.name=titre;
+    this.annonce.type=type;
+
+    if (type == "Animal perdu" || type == "Animal à donner"){
+      this.navCtrl.push('AjoutAnnonceAnimal2Page', {user: this.user, annonce : this.annonce});
+    }
+    else {
+      this.navCtrl.push('AjoutAnnonce2Page', {user: this.user, annonce: this.annonce});
+    }
   }
 
 }
