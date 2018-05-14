@@ -14,9 +14,11 @@ import { AjoutAnimal3Page } from '../pages/ajoutAnimal/ajout-animal3/ajout-anima
 import { SplashPage } from '../pages/splashScreen/splash/splash';
 import { ConnexionPage } from '../pages/connexion/connexion';
 import { User } from '../model/User';
-import { AnnoncesPage } from '../pages/Annonces/annonces';
 import { VeterinairePage } from '../pages/veterinaire/veterinaire';
 import { InformationsPage } from '../pages/informations/informations';
+import { AnnoncesPage } from '../pages/PagesAnnonces/annonces/annonces';
+import { ParametresPage } from '../pages/parametres/parametres';
+import { MessagesPage } from '../pages/messages/messages';
 
 
 
@@ -81,5 +83,16 @@ public openInfo(){
   this.nav.setRoot(InformationsPage,{user: this.userHome});
   this.menuCtrl.close();
 }
+
+public openParam(){
+  this.nav.setRoot(ParametresPage,{user: this.userHome});
+  this.menuCtrl.close();
+}
+
+public openMessages(){
+  this.nav.setRoot(MessagesPage,{user: this.userHome});
+  this.menuCtrl.close();
+}
+
   
 }
