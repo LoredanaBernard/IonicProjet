@@ -15,9 +15,11 @@ import { ModifAnimalPage } from '../pages/modif-animal/modif-animal';
 import { SplashPage } from '../pages/splashScreen/splash/splash';
 import { ConnexionPage } from '../pages/connexion/connexion';
 import { ProfilPage } from '../pages/profil/profil';
-import { AnnoncesPage } from '../pages/Annonces/annonces';
 import { VeterinairePage } from '../pages/veterinaire/veterinaire';
 import { InformationsPage } from '../pages/informations/informations';
+import { AnnoncesPage } from '../pages/PagesAnnonces/annonces/annonces';
+import { MessagesPage } from '../pages/messages/messages';
+import { ParametresPage } from '../pages/parametres/parametres';
 
 
 
@@ -31,7 +33,9 @@ import { InformationsPage } from '../pages/informations/informations';
     ProfilPage,
     AnnoncesPage,
     VeterinairePage,
-    InformationsPage
+    InformationsPage,
+    MessagesPage,
+    ParametresPage
 
     
   ],
@@ -48,7 +52,9 @@ import { InformationsPage } from '../pages/informations/informations';
     ProfilPage,
     AnnoncesPage,
     VeterinairePage,
-    InformationsPage
+    InformationsPage,
+    MessagesPage,
+    ParametresPage
   
   ],
   providers: [

@@ -14,13 +14,9 @@
 <ion-content padding>
     <ion-item>
         <ion-label color="primary">Animal</ion-label>
-        <ion-select  [(ngModel)]="animal">
+        <ion-select  [(ngModel)]="nom_animal"  >
           <!--A modif avec ngFor-->
-          <ion-option>Nom animal 1</ion-option>
-          <ion-option>Nom animal 2</ion-option>
-          <ion-option>Nom animal 3</ion-option>
-          <ion-option>Nom animal 4</ion-option>
-          <ion-option>Nom animal 5</ion-option>
+          <ion-option  *ngFor="let animal of listAnimaux">{{animal.name}}</ion-option>
         </ion-select>
       </ion-item>
 
@@ -30,7 +26,7 @@
       </ion-item>
 
      <ion-fab right bottom>
-        <button ion-fab color="primary" (click)='onClickPageSuivante(animal,texte)'><ion-icon name="checkmark"></ion-icon></button>         
+        <button ion-fab color="primary" (click)='onClickPageSuivante(nom_animal,texte)'><ion-icon name="checkmark"></ion-icon></button>         
     </ion-fab>
 
 </ion-content>

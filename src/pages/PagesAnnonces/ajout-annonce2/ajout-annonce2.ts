@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, ToastController, Nav } from 'ionic-angular';
 import { User } from '../../../model/User';
 import { Annonce } from '../../../model/Annonce';
 
@@ -18,7 +18,7 @@ import { Annonce } from '../../../model/Annonce';
 export class AjoutAnnonce2Page {
   user: User;
   annonce: Annonce;
-
+  @ViewChild(Nav) private nav: Nav;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
     this.user = navParams.get("user");
@@ -32,8 +32,10 @@ export class AjoutAnnonce2Page {
   onClickPageSuivante(texte: string){
     // Ajouter annonce à BDD 
 
+    
 
-    this.navCtrl.setRoot('AnnoncesPage', {user: this.user});
+    this.annonce.description = texte;
+    this.navCtrl.push('HomePage', {user: this.user});
 
      // Toast
      let toast = this.toastCtrl.create({

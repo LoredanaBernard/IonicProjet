@@ -16,29 +16,29 @@
 
         <ion-item>
           <ion-avatar item-start>
-            <img src="img/marty-avatar.png">
+            <img src="">
           </ion-avatar>
-          <h2>Marty McFly</h2>
+          <h2>{{annonce.type}}</h2>
           <p>November 5, 1955</p>
         </ion-item>
       
-        <img src="img/advance-card-bttf.png">
+        <img src={{annonce.image}}>
       
         <ion-card-content>
-          <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+          <p>{{annonce.description}}</p>
         </ion-card-content>
       
         <ion-row>
           <ion-col>
             <button ion-button icon-left clear small>
-              <ion-icon name="thumbs-up"></ion-icon>
-              <div>12 Likes</div>
+              <ion-icon name="eye"></ion-icon>
+              <div>{{annonce.nb_vus}} Vus</div>
             </button>
           </ion-col>
           <ion-col>
-            <button ion-button icon-left clear small>
+            <button ion-button icon-left clear small (click)='onClickGoComment(annonce)'>
               <ion-icon name="text"></ion-icon>
-              <div>4 Comments</div>
+              <div>{{annonce.nb_comment}} Comments</div>
             </button>
           </ion-col>
           <ion-col center text-center>
