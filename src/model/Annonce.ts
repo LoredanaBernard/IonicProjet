@@ -7,7 +7,7 @@ export class Annonce{
     name: string;
     image: string;    
     type: string;
-    date: string;
+    date: Date;
     description: string;
     nb_comment: number;
     nb_vus: number;
@@ -37,6 +37,7 @@ export class Annonce{
             id : this.id,
             auteur: user.id,
             type: this.type,
+            image: this.image,
             date: this.date,
             description: this.description,
             commentaires: 0,
@@ -51,6 +52,8 @@ export class Annonce{
         });
 
     }
+
+    
 
     modifAnnonce(){
 

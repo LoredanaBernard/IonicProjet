@@ -63,7 +63,7 @@ export class AjoutAnnonceAnimal2Page {
     this.annonce.image= this.ref_image;
 
     this.annonce.description = texte;
-    this.annonce.date = new Date().toISOString();
+    this.annonce.date = new Date();
     console.log(`${this.TAG} Date ${this.annonce.date}`);
 
     // Ajouter annonce à BDD 

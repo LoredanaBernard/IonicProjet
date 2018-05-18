@@ -26,21 +26,12 @@ export class AnnoncesPage {
   annonceBidon : Annonce = new Annonce();
   comment: Commentaire;
   ref : firebase.database.Reference; 
+  dateNow: Date;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.user = navParams.get("user");
     console.log(`${this.TAG} utilisateur_id : ${this.user.id}`);
 
-   /* this.annonceBidon.name = "Animal trouvé";
-    this.annonceBidon.id =2;
-    this.annonceBidon.description ="Chat trouvé près de la rue , hier matin.";
-    this.annonceBidon.type ="Animal trouvé";
-    this.annonceBidon.image="assets/imgs/cat.jpg";
-    this.annonceBidon.nb_comment=3;
-    this.annonceBidon.nb_vus=8;
-
-    this.listAnnonces.push(this.annonceBidon);
-    console.log(`${this.TAG} listAnimaux taille: ${this.listAnnonces.length}`);*/
 
     this.ref= firebase.database().ref('Annonces/');
     
@@ -53,6 +44,27 @@ export class AnnoncesPage {
       });      
     });
     console.log(`${this.TAG} listAnnonces taille: ${this.listAnnonces.length}`);
+
+
+  }
+
+  // TO DO
+  // Renvoi une string 
+  // " ...heures" ou "... jours"
+  getNbHeures(annonce:Annonce){
+    this.dateNow =  new Date();
+    // Si l'annonce date du même jour ou de la veille mais - de 24h avant 
+    // Affichage "... heures"
+      if((this.dateNow.getDay == annonce.date.getDay) &&(this.dateNow.getMonth == annonce.date.getMonth)){
+
+      }
+       
+       hoursNow : this.dateNow.getHours;
+       hoursAnnonce :annonce.date.getDay; 
+
+   // Sinon si l'annonce date de 1 jour ou plus
+   // Affichage "... jours"
+
 
 
   }
