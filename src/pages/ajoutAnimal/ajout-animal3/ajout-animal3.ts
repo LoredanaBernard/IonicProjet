@@ -45,7 +45,7 @@ export class AjoutAnimal3Page {
     this.animal.creerAnimal();
 
     // Passage à la page profil
-    this.navCtrl.push('ProfilPage', {user : this.user});
+    this.navCtrl.push('HomePage', {user : this.user});
 
     // Toast
     let toast = this.toastCtrl.create({

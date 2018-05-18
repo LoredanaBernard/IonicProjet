@@ -26,6 +26,7 @@
             <ion-col>
               <div>  </div>
               <div>{{user.id}}</div>
+              <div>{{this.nb_animaux}} animaux</div>
               <div></div>
             
             </ion-col>
@@ -37,7 +38,7 @@
 
       <ion-card   *ngFor="let animal of listAnimaux" (click)='onClickFicheAnimal(animal, user)'>
           <!--<img src="{{animal.image}"/>-->
-          <img src="assets/imgs/aria.jpg"/>
+          <img src="{{animal.image}}"/>
           <div>{{animal.name}}</div>
       </ion-card>
 

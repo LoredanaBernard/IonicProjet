@@ -21,6 +21,7 @@ import *as firebase from 'firebase';
 export class ProfilPage {
   readonly TAG:String ='ProfilPage';
   user: User;
+  nb_animaux: number;
   listAnimaux : Animal[] = [];
   ref : firebase.database.Reference; 
 
@@ -39,6 +40,7 @@ export class ProfilPage {
         return false;
       });      
     });
+    this.nb_animaux = this.listAnimaux.length;
     console.log(`${this.TAG} listAnimaux taille: ${this.listAnimaux.length}`);
   }
 

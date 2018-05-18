@@ -77,32 +77,37 @@ export class ConnexionPage {
       this.user.prenom = PassSnapShot.val().prenom;
       this.user.telephone = PassSnapShot.val().telephone;
       this.user.ville = PassSnapShot.val().ville;
+
+      console.log(`${this.TAG} password : ${this.user.password}`); 
+      console.log(`${this.TAG} password : ${this.user.email}`); 
+      console.log(`${this.TAG} ville : ${this.user.ville}`); 
+
+      if(this.user.password != password){
+        let alert = this.alertCtrl.create({
+          title: 'Erreur de données',
+          message: 'Le nom d utilisateur ou mot de passe est incorrect.',
+          buttons: [
+            {
+              text: 'OK',
+              role: 'cancel',
+              handler: () => {
+                console.log('Cancel clicked');
+              }
+            }
+            
+          ]
+        });
+        alert.present();
+      
+      }
+      else {
+        this.navCtrl.push('HomePage',  {user : this.user});
+      }
+
     });
 
-    console.log(`${this.TAG} password : ${this.user.password}`); 
-    console.log(`${this.TAG} password : ${this.user.email}`); 
-    console.log(`${this.TAG} ville : ${this.user.ville}`); 
-
-    if(this.user.password != password){
-      let alert = this.alertCtrl.create({
-        title: 'Erreur de données',
-        message: 'Le nom d utilisateur ou mot de passe est incorrect.',
-        buttons: [
-          {
-            text: 'OK',
-            role: 'cancel',
-            handler: () => {
-              console.log('Cancel clicked');
-            }
-          }
-          
-        ]
-      });
-      alert.present();
     
-    }
-    else {
-      this.navCtrl.push('HomePage',  {user : this.user});
-    }
+
+    
   }
 }

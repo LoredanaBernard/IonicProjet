@@ -6,19 +6,21 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>ajoutAnimal2</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Ajouter un animal </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-item>
-        <ion-label>Image</ion-label>
-        <ion-input type="text" [(ngModel)]="image"></ion-input>
-      </ion-item>
+    <ion-label>Image</ion-label>
+    <img src="{{imageSrc}}" />
+    <ion-fab right middle>
+        <button ion-fab color="light" (click)='openGallery()'><ion-icon name="images"></ion-icon></button>         
+  </ion-fab>
+   
     <ion-fab right bottom>
-        <button ion-fab color="light" (click)='onClickPageSuivante3(image)'><ion-icon name="arrow-dropright"></ion-icon></button>         
+        <button ion-fab color="light" (click)='onClickPageSuivante3()'><ion-icon name="arrow-dropright"></ion-icon></button>         
   </ion-fab>
 </ion-content>
