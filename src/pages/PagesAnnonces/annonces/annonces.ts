@@ -27,6 +27,8 @@ export class AnnoncesPage {
   comment: Commentaire;
   ref : firebase.database.Reference; 
   dateNow: Date;
+  timeNow;
+  timeAnnonce;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.user = navParams.get("user");
@@ -51,23 +53,7 @@ export class AnnoncesPage {
   // TO DO
   // Renvoi une string 
   // " ...heures" ou "... jours"
-  getNbHeures(annonce:Annonce){
-    this.dateNow =  new Date();
-    // Si l'annonce date du même jour ou de la veille mais - de 24h avant 
-    // Affichage "... heures"
-      if((this.dateNow.getDay == annonce.date.getDay) &&(this.dateNow.getMonth == annonce.date.getMonth)){
-
-      }
-       
-       hoursNow : this.dateNow.getHours;
-       hoursAnnonce :annonce.date.getDay; 
-
-   // Sinon si l'annonce date de 1 jour ou plus
-   // Affichage "... jours"
-
-
-
-  }
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AnnoncesPage');
