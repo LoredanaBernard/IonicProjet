@@ -69,7 +69,7 @@ export class AjoutAnnonceAnimal2Page {
     // Ajouter annonce à BDD 
     this.annonce.creerAnnonce(this.user);
     // Retour à pages des annonces // ne marche pas 
-    this.navCtrl.push('HomePage', {user: this.user});
+    this.navCtrl.push('AnnoncesPage', {user: this.user});
 
       // Toast
       let toast = this.toastCtrl.create({

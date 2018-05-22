@@ -36,7 +36,7 @@ export class CommentairesPage {
     this.annonce = navParams.get("annonce");
     console.log(`${this.TAG} annonce_id : ${this.annonce.id}`);
 
-    //Commentaires de test
+    //Commentaires de test exemple
     this.commentaireBidon = new Commentaire();
     this.commentaireBidon.id_auteur="John";
     this.commentaireBidon.id_comment=12;

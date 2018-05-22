@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import *as firebase from 'firebase';
 
 import { HomePage } from '../pages/home/home';
-import { ProfilPage } from '../pages/profil/profil';
+
 import { ProfilAnimalPage } from '../pages/profil-animal/profil-animal';
 import { ModifAnimalPage } from '../pages/modif-animal/modif-animal';
 import { AjoutAnimal1Page } from '../pages/ajoutAnimal/ajout-animal1/ajout-animal1';
@@ -14,11 +14,7 @@ import { AjoutAnimal3Page } from '../pages/ajoutAnimal/ajout-animal3/ajout-anima
 import { SplashPage } from '../pages/splashScreen/splash/splash';
 import { ConnexionPage } from '../pages/connexion/connexion';
 import { User } from '../model/User';
-import { VeterinairePage } from '../pages/veterinaire/veterinaire';
-import { InformationsPage } from '../pages/informations/informations';
-import { AnnoncesPage } from '../pages/PagesAnnonces/annonces/annonces';
-import { ParametresPage } from '../pages/parametres/parametres';
-import { MessagesPage } from '../pages/messages/messages';
+
 
 
 
@@ -62,35 +58,35 @@ export class MyApp {
 }
 
 public openHome(){
-  this.nav.setRoot(HomePage,{user: this.userHome});
+  this.nav.setRoot('HomePage',{user: this.userHome});
   this.menuCtrl.close();
 }
 public openProfil(){
-  this.nav.setRoot(ProfilPage,{user: this.userHome});
+  this.nav.setRoot('ProfilPage',{user: this.userHome});
   this.menuCtrl.close();
 }
 
 public openAnnonces(){
-  this.nav.setRoot(AnnoncesPage,{user: this.userHome});
+  this.nav.setRoot('AnnoncesPage',{user: this.userHome});
   this.menuCtrl.close();
 }
 public openVeto(){
-  this.nav.setRoot(VeterinairePage,{user: this.userHome});
+  this.nav.setRoot('VeterinairePage',{user: this.userHome});
   this.menuCtrl.close();
 }
 
 public openInfo(){
-  this.nav.setRoot(InformationsPage,{user: this.userHome});
+  this.nav.setRoot('InformationsPage',{user: this.userHome});
   this.menuCtrl.close();
 }
 
 public openParam(){
-  this.nav.setRoot(ParametresPage,{user: this.userHome});
+  this.nav.setRoot('ParametresPage',{user: this.userHome});
   this.menuCtrl.close();
 }
 
 public openMessages(){
-  this.nav.setRoot(MessagesPage,{user: this.userHome});
+  this.nav.setRoot('MessagesPage',{user: this.userHome});
   this.menuCtrl.close();
 }
 

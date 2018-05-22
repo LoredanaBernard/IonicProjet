@@ -16,10 +16,10 @@
 
         <ion-item>
           <ion-avatar item-start>
-            <img src="assets/imgs/contact.png">
+            <img src="assets/imgs/person.png" >
           </ion-avatar>
           <h2>{{annonce.type}}</h2>
-          <p>{{annonce.dateString}}</p>
+          <p>{{annonce.date | date: 'd MMMM h:mm'}}</p>
         </ion-item>
       
         <img src="{{annonce.image}}">
@@ -30,7 +30,7 @@
       
         <ion-row>
           <ion-col>
-            <button ion-button icon-left clear small>
+            <button ion-button icon-left clear small (click)='modifNbVus(annonce)'>
               <ion-icon name="eye"></ion-icon>
               <div>{{annonce.nb_vus}} Vus</div>
             </button>

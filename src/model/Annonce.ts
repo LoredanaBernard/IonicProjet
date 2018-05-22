@@ -36,7 +36,8 @@ export class Annonce{
         this.reference.set({
             id : this.id,
             auteur: user.id,
-            date: this.date.toDateString(),
+          //  date: this.date.toDateString(),
+            date: this.date,
             dateString: this.dateString,
             type: this.type,
             image: this.image,            
@@ -123,6 +124,7 @@ export class Annonce{
         console.log(`Date  ${this.date}`);
     }
 
+    
 
    /* getNbHeures(): number{
        this.dateNow =  new Date();

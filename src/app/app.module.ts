@@ -19,7 +19,7 @@ import { ConnexionPage } from '../pages/connexion/connexion';
 import { ProfilPage } from '../pages/profil/profil';
 import { VeterinairePage } from '../pages/veterinaire/veterinaire';
 import { InformationsPage } from '../pages/informations/informations';
-import { AnnoncesPage } from '../pages/PagesAnnonces/annonces/annonces';
+//import { AnnoncesPage } from '../pages/PagesAnnonces/annonces/annonces';
 import { MessagesPage } from '../pages/messages/messages';
 import { ParametresPage } from '../pages/parametres/parametres';
 
@@ -33,7 +33,7 @@ import { ParametresPage } from '../pages/parametres/parametres';
     ModifAnimalPage,
     SplashPage,
     ProfilPage,
-    AnnoncesPage,
+    //AnnoncesPage,
     VeterinairePage,
     InformationsPage,
     MessagesPage,
@@ -51,12 +51,7 @@ import { ParametresPage } from '../pages/parametres/parametres';
     ConnexionPage,
     ModifAnimalPage,
     SplashPage,
-    ProfilPage,
-    AnnoncesPage,
-    VeterinairePage,
-    InformationsPage,
-    MessagesPage,
-    ParametresPage
+   
   
   ],
   providers: [

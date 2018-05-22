@@ -67,6 +67,15 @@ export class AnnoncesPage {
     this.navCtrl.push('CommentairesPage', {user: this.user, annonce: annonce});
 
   }
-  
+
+  modifNbVus(annonce:Annonce){
+    console.log(`${this.TAG} modifNbVus(): ${annonce.nb_vus}`);
+    console.log(`${this.TAG} modifNbVus() id-annonce: ${annonce.id}`);
+    annonce.nb_vus = 2;
+    annonce.reference = firebase.database().ref('Annonces/'+ annonce.id);
+    annonce.reference.update({
+        vus:annonce.nb_vus
+    });
+  }  
 
 }
