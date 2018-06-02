@@ -2,6 +2,9 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { OneSignal } from '@ionic-native/onesignal';
+import { Geolocation } from '@ionic-native/geolocation';
+import {GoogleMaps} from '@ionic-native/google-maps';
 
 import { MyApp } from './app.component';
 
@@ -16,12 +19,7 @@ import { ModifAnimalPage } from '../pages/modif-animal/modif-animal';
 
 import { SplashPage } from '../pages/splashScreen/splash/splash';
 import { ConnexionPage } from '../pages/connexion/connexion';
-import { ProfilPage } from '../pages/profil/profil';
-import { VeterinairePage } from '../pages/veterinaire/veterinaire';
-import { InformationsPage } from '../pages/informations/informations';
-//import { AnnoncesPage } from '../pages/PagesAnnonces/annonces/annonces';
-import { MessagesPage } from '../pages/messages/messages';
-import { ParametresPage } from '../pages/parametres/parametres';
+
 
 
 
@@ -31,14 +29,7 @@ import { ParametresPage } from '../pages/parametres/parametres';
     MyApp,
     ConnexionPage,
     ModifAnimalPage,
-    SplashPage,
-    ProfilPage,
-    //AnnoncesPage,
-    VeterinairePage,
-    InformationsPage,
-    MessagesPage,
-    ParametresPage
-
+    SplashPage
     
   ],
   imports: [
@@ -58,7 +49,10 @@ import { ParametresPage } from '../pages/parametres/parametres';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Camera
+    Camera,
+    Geolocation,
+    GoogleMaps,
+    OneSignal
   ]
 })
 export class AppModule {}

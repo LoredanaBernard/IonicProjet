@@ -3,19 +3,20 @@ import { Platform , Nav, Events, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import *as firebase from 'firebase';
+import { OneSignal, OSNotificationPayload } from '@ionic-native/onesignal';
+
 
 import { HomePage } from '../pages/home/home';
 
 import { ProfilAnimalPage } from '../pages/profil-animal/profil-animal';
 import { ModifAnimalPage } from '../pages/modif-animal/modif-animal';
+import { VeterinairePage } from '../pages/veterinaire/veterinaire';
 import { AjoutAnimal1Page } from '../pages/ajoutAnimal/ajout-animal1/ajout-animal1';
 import { AjoutAnimal2Page } from '../pages/ajoutAnimal/ajout-animal2/ajout-animal2';
 import { AjoutAnimal3Page } from '../pages/ajoutAnimal/ajout-animal3/ajout-animal3';
 import { SplashPage } from '../pages/splashScreen/splash/splash';
 import { ConnexionPage } from '../pages/connexion/connexion';
 import { User } from '../model/User';
-
-
 
 
 @Component({
@@ -28,7 +29,13 @@ export class MyApp {
   @ViewChild(Nav) private nav: Nav;
 
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public events: Events,public menuCtrl: MenuController) {
+  constructor(platform: Platform, 
+              statusBar: StatusBar, 
+              splashScreen: SplashScreen, 
+              public events: Events,
+              public menuCtrl: MenuController,
+              private oneSignal: OneSignal) {
+
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -38,7 +45,24 @@ export class MyApp {
         this.userHome = user;
         console.log('Welcome', user, 'at', time);
       });
-    });
+
+      this.oneSignal.startInit('384f8632-0c3e-4e55-acb9-f58bf68aa4aa', '968396793810');
+
+      this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
+
+      this.oneSignal.handleNotificationReceived().subscribe(() => {
+      // do something when notification is received
+      });
+
+      this.oneSignal.handleNotificationOpened().subscribe(() => {
+        // do something when a notification is opened
+      });
+
+      this.oneSignal.endInit();
+
+      
+    });  
+    
 
     var config = {
       apiKey: "AIzaSyBQtDwKs4I5WtfrM7g6uf6kgpUqXY__VtU",
@@ -50,6 +74,7 @@ export class MyApp {
     };
     firebase.initializeApp(config);
     var storage = firebase.storage();
+    
   }
 
   public openConnexion() {
