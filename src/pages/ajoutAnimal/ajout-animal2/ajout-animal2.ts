@@ -45,6 +45,29 @@ export class AjoutAnimal2Page {
    this.navCtrl.push('AjoutAnimal3Page', { user: this.user, animal: this.animal });
 
   }
+  private openCamera(){
+    console.log(`${this.TAG} openCamera() `);
+    let cameraOptions = {
+      quality: 100,
+      sourceType: this.camera.PictureSourceType.CAMERA,
+     // destinationType: this.camera.DestinationType.FILE_URI,
+     destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,     
+      saveToPhotoAlbum: true,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      correctOrientation: true
+    }
+  
+    this.camera.getPicture(cameraOptions)
+      .then(file_uri => this.imageSrc = 'data:image/jpeg;base64,' + file_uri, 
+      err => console.log(err));
+
+      console.log(`${this.TAG} openCamera() FIN `);
+
+  }
+
 
   private openGallery (){
     console.log(`${this.TAG} openGallery() `);

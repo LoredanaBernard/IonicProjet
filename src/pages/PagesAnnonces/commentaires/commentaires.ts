@@ -27,6 +27,7 @@ export class CommentairesPage {
   commentaireBidon2: Commentaire;
   comment: Commentaire;
   ref : firebase.database.Reference; 
+  refCom :firebase.database.Reference;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -36,21 +37,17 @@ export class CommentairesPage {
     this.annonce = navParams.get("annonce");
     console.log(`${this.TAG} annonce_id : ${this.annonce.id}`);
 
-    //Commentaires de test exemple
-    this.commentaireBidon = new Commentaire();
-    this.commentaireBidon.id_auteur="John";
-    this.commentaireBidon.id_comment=12;
-    this.commentaireBidon.texte="Je l'ai vu à telle adresse hier matin.";
-    this.commentaireBidon.date="12 mai 2018";
-    
-    this.commentaireBidon2 = new Commentaire();
-    this.commentaireBidon2.id_auteur="Doug";
-    this.commentaireBidon2.id_comment=14;
-    this.commentaireBidon2.texte="Je l'ai vu aussi, dans mon jardin hier.";
-    this.commentaireBidon2.date="13 mai 2018";
-
-    this.listCommentaires.push(this.commentaireBidon);
-    this.listCommentaires.push(this.commentaireBidon2);
+    this.refCom = firebase.database().ref('Annonces/'+this.annonce.id + '/Commentaires');
+    this.refCom.on('value',ItemSnapShot =>{
+      ItemSnapShot.forEach(ItemSnap =>
+      {
+        this.listCommentaires.push(ItemSnap.val());
+        return false;
+      });      
+    });
+  
+    console.log(`${this.TAG} listCommentaires taille: ${this.listCommentaires.length}`);
+  
   }
 
   ionViewDidLoad() {
@@ -58,7 +55,7 @@ export class CommentairesPage {
   }
 
   onClickComment(annonce: Annonce, texte: string){
-    this.ref= firebase.database().ref('Annonces/'+annonce.id);
+    this.ref= firebase.database().ref('Annonces/'+this.annonce.id + '/Commentaires/');
     this.comment = new Commentaire();
 
     this.comment.creerCommentaire(this.ref, annonce, this.user, texte);

@@ -26,7 +26,7 @@ export class Annonce{
 
     creerAnnonce(user: User){       
         //Creation de l'id
-       this.creerId();
+       
 
         // formatage date     
        this.formaterDate();
