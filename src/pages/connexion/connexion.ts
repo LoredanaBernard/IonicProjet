@@ -36,29 +36,8 @@ export class ConnexionPage {
     this.user.id =e;
     this.user.password = p;
 
-    // BON CA MARCHE PAS 
-  /*  this.ref=firebase.database().ref('User/'+ this.user.id);
-    if (this.ref!=null){
-      let alert = this.alertCtrl.create({
-        title: 'Nom déjà pris',
-        message: 'Le nom d utilisateur ci-dessus est déjà pris. Veuillez en choisir un nouveau.',
-        buttons: [
-          {
-            text: 'OK',
-            role: 'cancel',
-            handler: () => {
-              console.log('Cancel clicked');
-            }
-          }
-          
-        ]
-      });
-      alert.present();
-    
-    }
-    else {*/
-      this.navCtrl.push('Inscription1Page', {user : this.user});
-   /* }*/  
+    this.navCtrl.push('Inscription0Page', {user : this.user});
+   
   
   }
 
