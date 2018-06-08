@@ -109,5 +109,10 @@ public openMessages(){
   this.menuCtrl.close();
 }
 
+public openMesAnnonces(){
+  this.nav.setRoot('MesAnnoncesPage',{user: this.userHome});
+  this.menuCtrl.close();
+}
+
   
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { User } from '../../../model/User';
 
 /**
  * Generated class for the ConfidentialitePage page.
@@ -14,8 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'confidentialite.html',
 })
 export class ConfidentialitePage {
-
+  readonly TAG:String ='ConfidentialitePage';
+  user: User;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.user = navParams.get("user");
+    console.log(`${this.TAG} utilisateur_id : ${this.user.id}`);
   }
 
   ionViewDidLoad() {

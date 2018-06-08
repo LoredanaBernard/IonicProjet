@@ -35,4 +35,8 @@ export class ParametresPage {
   onClickModif(){
     this.navCtrl.push('ModifComptePage', {user : this.user});
   }
+
+  onClickConfidentialite(){
+    this.navCtrl.push('ConfidentialitePage', {user : this.user});
+  }
 }

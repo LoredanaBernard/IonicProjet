@@ -22,7 +22,7 @@ export class AjoutAnnonce2Page {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
     this.user = navParams.get("user");
-    this.annonce = navParams.get("annonce");''
+    this.annonce = navParams.get("annonce");
   }
 
   ionViewDidLoad() {

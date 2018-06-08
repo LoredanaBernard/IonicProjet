@@ -29,7 +29,6 @@ export class Animal{
     }
 
     supprAnimal(){
-        this.reference = firebase.database().ref('User/'+ this.id_user +'/Animal/'+ this.id);
-        this.reference.remove();
+        
     }
 }

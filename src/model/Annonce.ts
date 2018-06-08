@@ -26,7 +26,7 @@ export class Annonce{
 
     creerAnnonce(user: User){       
         //Creation de l'id
-       
+       this.creerId();
 
         // formatage date     
        this.formaterDate();
@@ -67,7 +67,7 @@ export class Annonce{
     }
 
     creerId(){
-        this.referenceID = firebase.database().ref('Annonces/');
+      /*  this.referenceID = firebase.database().ref('Annonces/');
         this.referenceID.on('value',ItemSnapShot =>{
             ItemSnapShot.forEach(ItemSnap =>
             {
@@ -77,7 +77,10 @@ export class Annonce{
           });
           console.log(`Annonce : listAnimaux taille: ${this.listAnnonces.length}`);
           this.id = this.listAnnonces.length + 1; // implique de pas supprimer d'annonce...
-          console.log(`Annonce : id: ${this.id}`);
+          console.log(`Annonce : id: ${this.id}`);*/
+
+          this.id = Math.round(Math.random()*10000000);
+          console.log(`ID Annonce  ${this.id}`);
     }
 
     formaterDate(){
