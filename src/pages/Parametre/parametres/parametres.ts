@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { User } from '../../model/User';
+import { User } from '../../../model/User';
 
 /**
  * Generated class for the ParametresPage page.
@@ -28,4 +28,11 @@ export class ParametresPage {
     console.log('ionViewDidLoad ParametresPage');
   }
 
+  onClickRemove(){
+    this.navCtrl.push('CloturerComptePage', {user : this.user});
+  }
+
+  onClickModif(){
+    this.navCtrl.push('ModifComptePage', {user : this.user});
+  }
 }
