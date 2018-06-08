@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { ProfilPage } from '../profil/profil';
 import { ModifAnimalPage } from '../modif-animal/modif-animal';
-import { User } from 'firebase';
+
 import { Animal } from '../../model/Animal';
 import *as firebase from 'firebase';
+import { User } from '../../model/User';
 
 /**
  * Generated class for the ProfilAnimalPage page.
@@ -30,7 +31,6 @@ export class ProfilAnimalPage {
               public toastCtrl: ToastController) {
 
     this.user = navParams.get("user");
-    //console.log(`${this.TAG} utilisateur : ${this.user.nom}`);
     this.animal = navParams.get("animal");
     console.log(`${this.TAG} animal : ${this.animal.name}`);
     
@@ -63,6 +63,8 @@ export class ProfilAnimalPage {
           text: 'Oui',
           handler: () => {
             console.log('Animal supprimé');
+            this.ref = firebase.database().ref('User/'+ this.user.id +'/Animal/'+ this.animal.id);
+            this.ref.remove();
             let toast = this.toastCtrl.create({
               message: 'Animal supprimé',
               duration: 3000
