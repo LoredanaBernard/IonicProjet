@@ -85,12 +85,12 @@
     <plugin name="cordova-plugin-datepicker" spec="^0.9.3" />
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
     <plugin name="onesignal-cordova-plugin" spec="^2.4.1" />
-    <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
-        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
-    </plugin>
     <plugin name="cordova-plugin-googlemaps" spec="^2.3.5">
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyC2AG2T5vEHMuG2dHmBhx3T-M5Auh8ajMc" />
         <variable name="PLAY_SERVICES_VERSION" value="15.0.1" />
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="26.1.0" />
+    </plugin>
+    <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
 </widget>

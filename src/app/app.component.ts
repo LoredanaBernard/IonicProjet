@@ -8,12 +8,6 @@ import { OneSignal, OSNotificationPayload } from '@ionic-native/onesignal';
 
 import { HomePage } from '../pages/home/home';
 
-import { ProfilAnimalPage } from '../pages/profil-animal/profil-animal';
-import { ModifAnimalPage } from '../pages/modif-animal/modif-animal';
-import { VeterinairePage } from '../pages/veterinaire/veterinaire';
-import { AjoutAnimal1Page } from '../pages/ajoutAnimal/ajout-animal1/ajout-animal1';
-import { AjoutAnimal2Page } from '../pages/ajoutAnimal/ajout-animal2/ajout-animal2';
-import { AjoutAnimal3Page } from '../pages/ajoutAnimal/ajout-animal3/ajout-animal3';
 import { SplashPage } from '../pages/splashScreen/splash/splash';
 import { ConnexionPage } from '../pages/connexion/connexion';
 import { User } from '../model/User';
