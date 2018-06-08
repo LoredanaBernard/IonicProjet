@@ -23,12 +23,16 @@
         <ion-input value="{{this.user.nom}}" type="text" [(ngModel)]="nom"></ion-input>
     </ion-item>
     <ion-item>
+        <ion-label>Mot de passe</ion-label>
+        <ion-input value="{{this.user.password}}" type="password" [(ngModel)]="mdp"></ion-input>
+    </ion-item>
+    <ion-item>
         <ion-label>Adresse mail</ion-label>
-        <ion-input value="{{this.user.mail}}" type="text" [(ngModel)]="mail"></ion-input>
+        <ion-input value="{{this.user.email}}" type="text" [(ngModel)]="mail"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label>Téléphone</ion-label>
-        <ion-input value="{{this.user.tel}}" type="number" [(ngModel)]="tel"></ion-input>
+        <ion-input value="{{this.user.telephone}}" type="number" [(ngModel)]="tel"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label>Ville</ion-label>
@@ -36,6 +40,6 @@
     </ion-item>
 
   <ion-fab right bottom>
-        <button ion-fab color="light" (click)='onClickModif(prenom,nom,mail,tel,ville)'><ion-icon name="checkmark"></ion-icon></button>         
+        <button ion-fab color="light" (click)='onClickModif(prenom,nom,tel,mail,ville,mdp)'><ion-icon name="checkmark"></ion-icon></button>         
   </ion-fab>
 </ion-content>
