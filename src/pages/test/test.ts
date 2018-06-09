@@ -25,7 +25,9 @@ import {
 export class TestPage {
   map: GoogleMap;
   constructor(public navCtrl: NavController, public navParams: NavParams, private googleMaps: GoogleMaps, public platform: Platform) {
-    
+    platform.ready().then(() => {
+      this.loadMap();
+  });
   }
 
   ionViewDidLoad() {
@@ -34,56 +36,33 @@ export class TestPage {
   }
 
   loadMap() {
-    // create a new map by passing HTMLElement
-    let element: HTMLElement = document.getElementById('map');
-
-    //let map: GoogleMap = this.googleMaps.create(element);
-    console.log('Map.create()');
-
-    // listen to MAP_READY event
-    // You must wait for this event to fire before adding something to the map or modifying it in anyway
- /*   map.one(GoogleMapsEvent.MAP_READY).then(
-      () => {
-        console.log('Map is ready!');
-        // Now you can add elements to the map like the marker
+    let location = new LatLng(-34.9290,138.6010);
+ 
+    this.map = new GoogleMap('map', {
+      'backgroundColor': 'white',
+      'controls': {
+        'compass': true,
+        'myLocationButton': true,
+        'indoorPicker': true,
+        'zoom': true
+      },
+      'gestures': {
+        'scroll': true,
+        'tilt': true,
+        'rotate': true,
+        'zoom': true
+      },
+      'camera': {
+        'target':location,
+        'tilt': 30,
+        'zoom': 15,
+        'bearing': 50
       }
-    );*/
+    });
 
-    let mapOptions: GoogleMapOptions = {
-      camera: {
-         target: {
-           lat: 43.0741904,
-           lng: -89.3809802
-         },
-         zoom: 18,
-         tilt: 30
-       }
-    };
+    this.map.on(GoogleMapsEvent.MAP_READY).subscribe(() => {
+        console.log('Map is ready!');
+    });
 
-    this.map = GoogleMaps.create('map', mapOptions);
-    
-    // create LatLng object
-   /* let ionic: LatLng = new LatLng(43.0741904,-89.3809802);
-
-    // create CameraPosition
-    let position: CameraPosition<any> = {
-      target: ionic,
-      zoom: 18,
-      tilt: 30
-    };
-
-    // move the map's camera to position
-    map.moveCamera(position);
-
-    // create new marker
-    let markerOptions: MarkerOptions = {
-      position: ionic,
-      title: 'Ionic'
-    };
-
-    map.addMarker(markerOptions)
-    .then((marker: Marker) => {
-        marker.showInfoWindow();
-    });*/
 }
 }
