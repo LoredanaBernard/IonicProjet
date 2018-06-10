@@ -15,7 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 
-import { ModifAnimalPage } from '../pages/modif-animal/modif-animal';
+
 
 import { SplashPage } from '../pages/splashScreen/splash/splash';
 import { ConnexionPage } from '../pages/connexion/connexion';
@@ -28,7 +28,6 @@ import { ConnexionPage } from '../pages/connexion/connexion';
   declarations: [
     MyApp,
     ConnexionPage,
-    ModifAnimalPage,
     SplashPage
     
   ],
@@ -40,7 +39,6 @@ import { ConnexionPage } from '../pages/connexion/connexion';
   entryComponents: [
     MyApp,
     ConnexionPage,
-    ModifAnimalPage,
     SplashPage,
    
   

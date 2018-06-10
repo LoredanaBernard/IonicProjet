@@ -15,17 +15,17 @@
 
 
 <ion-content padding>
-    <ion-card *ngFor="let annonce of listAnnonces">
+    <ion-card *ngFor="let annonce of listAnnonces" >
 
         <ion-item>
           <ion-avatar item-start>
-            <img src="assets/imgs/person.png" >
+            <img src="assets/imgs/person.png"  >
           </ion-avatar>
           <h2>{{annonce.type}}</h2>
           <p>{{annonce.date | date: 'd MMMM h:mm'}}</p>
         </ion-item>
       
-        <img src="{{annonce.image}}" class="image">
+        <img src="{{annonce.image}}" class="image" (click)='onClickAnnonce(annonce)'>
       
         <ion-card-content>
           <p>{{annonce.description}}</p>

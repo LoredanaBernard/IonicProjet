@@ -12,25 +12,30 @@
 
 
 
-<ion-content padding>
-    <ion-item>
-        <ion-label>Username</ion-label>
-        <ion-input type="text" [(ngModel)]="username"></ion-input>
-      </ion-item>
+<ion-content>
     
-      <ion-item>
-        <ion-label>Password</ion-label>
-        <ion-input type="password" [(ngModel)]="password"></ion-input>
-      </ion-item>
-    
-    
-    
-    <div padding>
-      <button ion-button color="primary" (click)="onClickConnect(username,password)">Connexion</button>
-      <button ion-button color="secondary"  (click)="onClickRegister(username,password)">S'inscrire</button>
+  <ion-grid>
       
-    </div>
-
+    <ion-row>
+      <ion-col>
+          <ion-item class="centrer">
+              <ion-label>Nom d'utilisateur</ion-label>
+              <ion-input type="text" [(ngModel)]="username"></ion-input>
+            </ion-item>        
+            <ion-item>
+              <ion-label>Mot de passe</ion-label>
+              <ion-input type="password" [(ngModel)]="password"></ion-input>
+            </ion-item>      
+          
+          <div padding class="centrer">
+            <button ion-button color="primary" (click)="onClickConnect(username,password)">Connexion</button>
+            <button ion-button color="secondary"  (click)="onClickRegister(username,password)">S'inscrire</button>          
+          </div>
+      </ion-col>
+        
+    </ion-row>
+  </ion-grid>  
+  <div><img src="assets/imgs/veto.png"/></div>
 </ion-content>
 
 

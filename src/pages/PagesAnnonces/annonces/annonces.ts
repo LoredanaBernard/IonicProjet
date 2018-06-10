@@ -37,7 +37,7 @@ export class AnnoncesPage {
 
     this.ref= firebase.database().ref('Annonces/');
     
-    // Récupération de la liste des animaux
+    // Récupération de la liste des annonces
     this.ref.on('value',ItemSnapShot =>{
       ItemSnapShot.forEach(ItemSnap =>
       {
@@ -50,14 +50,17 @@ export class AnnoncesPage {
 
   }
 
-  // TO DO
-  // Renvoi une string 
-  // " ...heures" ou "... jours"
+
   
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AnnoncesPage');
   }
+
+  onClickAnnonce(annonce: Annonce){
+    this.navCtrl.push('AnnoncePage', {user: this.user, annonce: annonce});
+  }
+  
 
   onClickAddAnnonce(){
     this.navCtrl.push('AjoutAnnoncePage',  {user : this.user});

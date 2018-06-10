@@ -43,7 +43,7 @@ export class ProfilAnimalPage {
 
   // Modification d'un animal
   onClickModifAnimal(){
-    this.navCtrl.push(ModifAnimalPage);
+    this.navCtrl.push('ModifAnimalPage', {animal: this.animal, user : this.user});
   }
 
   // Suppression d'un animal de la liste

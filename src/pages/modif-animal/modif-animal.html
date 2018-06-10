@@ -14,6 +14,19 @@
 
 
 <ion-content padding>
-  
+    <div ><img src="{{this.animal.image}}" class="image"/></div>   
+    <ion-item>
+        <ion-label>Nom</ion-label>
+        <ion-input value="{{this.animal.name}}" type="text" [(ngModel)]="nom"></ion-input>
+    </ion-item>
+   
+    <ion-item>
+        <ion-label>Age</ion-label>
+        <ion-input value="{{this.animal.age}}" type="number" [(ngModel)]="age"></ion-input>
+    </ion-item>
+
+    <ion-fab right bottom>
+        <button ion-fab color="light" (click)='onClickModif(nom,age)'><ion-icon name="checkmark"></ion-icon></button>         
+  </ion-fab>
 
 </ion-content>
