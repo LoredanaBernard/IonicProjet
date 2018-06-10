@@ -7,6 +7,9 @@
     <ion-title>
       Annonces
     </ion-title>
+    <ion-buttons end>      
+      <img src="assets/imgs/annonces.png" height="35"/>
+  </ion-buttons>
   </ion-toolbar> 
 </ion-header>
 
@@ -22,7 +25,7 @@
           <p>{{annonce.date | date: 'd MMMM h:mm'}}</p>
         </ion-item>
       
-        <img src="{{annonce.image}}">
+        <img src="{{annonce.image}}" class="image">
       
         <ion-card-content>
           <p>{{annonce.description}}</p>

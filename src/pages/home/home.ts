@@ -65,6 +65,14 @@ export class HomePage {
     this.navCtrl.push('ProfilPage', {user : this.user});
     }
 
+  onClickVeterinaire(){
+      this.navCtrl.push('VeterinairePage', {user : this.user});
+  }
+
+  onClickAnnonces(){
+    this.navCtrl.push('AnnoncesPage', {user : this.user});
+}
+
 }
 
 

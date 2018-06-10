@@ -32,7 +32,7 @@ export class TestPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TestPage');
-    this.loadMap();
+   
   }
 
   loadMap() {

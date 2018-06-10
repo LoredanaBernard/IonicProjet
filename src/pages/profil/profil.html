@@ -14,15 +14,18 @@
       <ion-title>
         Mon profil
       </ion-title>
+      <ion-buttons end>      
+        <img src="assets/imgs/profil.png" height="35"/>
+    </ion-buttons>
     </ion-toolbar> 
 </ion-header>
 
 
-<ion-content padding>
-    <ion-list>
-        <ion-item>
+<ion-content > 
+    <ion-list color="light">
+        <ion-item  color="light">
           <ion-row>
-            <ion-col><img src="assets/imgs/person.png"/></ion-col>
+            <ion-col><img src="assets/imgs/person.png" height="40"/></ion-col>
             <ion-col>
               <div>  </div>
               <div>{{user.id}}</div>
@@ -36,10 +39,9 @@
         </ion-item>
       </ion-list>
 
-      <ion-card   *ngFor="let animal of listAnimaux" (click)='onClickFicheAnimal(animal, user)'>
-          <!--<img src="{{animal.image}"/>-->
-          <img src="{{animal.image}}"/>
-          <div>{{animal.name}}</div>
+      <ion-card  class="card" *ngFor="let animal of listAnimaux" (click)='onClickFicheAnimal(animal, user)'>
+          <img src="{{animal.image}}" class="image"/>
+          <div class="title">{{animal.name}}</div>
       </ion-card>
 
       <ion-fab right bottom>

@@ -9,14 +9,28 @@
     <ion-title>
       Accueil
     </ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="doClick()">
-        <ion-icon name="more"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-toolbar> 
   </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)='onClickProfil()'>Profil</button>
+  <ion-grid>
+    <ion-row>
+      <ion-col  (click)="onClickVeterinaire()">
+        <img src="assets/imgs/veterinaire.png"/>
+      </ion-col>
+      <ion-col (click)="onClickProfil()">
+        <img src="assets/imgs/profil.png"/>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col (click)="onClickAnnonces()">
+        <img src="assets/imgs/annonces.png"/>
+      </ion-col>
+      <ion-col>
+        2 of 3
+      </ion-col>
+     
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
