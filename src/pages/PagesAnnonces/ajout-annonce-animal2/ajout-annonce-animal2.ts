@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 import { Annonce } from '../../../model/Annonce';
 import { User } from '../../../model/User';
 import { Animal } from '../../../model/Animal';
@@ -28,7 +28,8 @@ export class AjoutAnnonceAnimal2Page {
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
-    public toastCtrl: ToastController) {
+    public toastCtrl: ToastController, 
+    private alertCtrl: AlertController) {
 
     this.user = navParams.get("user");
     this.annonce = navParams.get("annonce");
@@ -51,7 +52,25 @@ export class AjoutAnnonceAnimal2Page {
   }
 
   onClickPageSuivante(nom_animal: string,texte:string){
-    // Récuperer l'image de l'animal
+    if(nom_animal == null || texte==null){
+      let alert = this.alertCtrl.create({
+        title: 'Données manquantes',
+        message: 'Tous les champs doivent être remplis.',
+        buttons: [
+          {
+            text: 'OK',
+            role: 'cancel',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          }
+          
+        ]
+      });
+      alert.present();
+    }
+    else {
+      // Récuperer l'image de l'animal
     this.refAnimal = firebase.database().ref('User/'+ this.user.id + '/Animal/'+ this.user.id + '_' + nom_animal);
     console.log(`${this.TAG} User/ ${this.user.id} /Animal ${this.user.id} _ ${nom_animal}`);
 
@@ -78,4 +97,6 @@ export class AjoutAnnonceAnimal2Page {
       });
       toast.present();
   }
+    }
+    
 }

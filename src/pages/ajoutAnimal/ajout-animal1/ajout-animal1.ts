@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { AjoutAnimal2Page } from '../ajout-animal2/ajout-animal2';
 import { User } from '../../../model/User';
 import { Animal } from '../../../model/Animal';
@@ -21,7 +21,8 @@ export class AjoutAnimal1Page {
   user: User;
   animal : Animal;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  private alertCtrl: AlertController,
+    public toastCtrl: ToastController) {
     this.user = navParams.get("user");
     console.log(`${this.TAG} utilisateur : ${this.user.nom}`);
 
@@ -33,10 +34,30 @@ export class AjoutAnimal1Page {
   }
 
   onClickPageSuivante(n: string, type:string){
-    this.animal.name=n;
+    if(n== null || type==null){
+      let alert = this.alertCtrl.create({
+        title: 'Données manquantes',
+        message: 'Tous les champs doivent être remplis.',
+        buttons: [
+          {
+            text: 'OK',
+            role: 'cancel',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          }
+          
+        ]
+      });
+      alert.present();
+    }
+    else {
+      this.animal.name=n;
     this.animal.type=type;
     console.log(`${this.TAG} animal: ${this.animal.name}`);
     this.navCtrl.push('AjoutAnimal2Page',{ user: this.user, animal: this.animal });
+    }
+    
     
   }
 

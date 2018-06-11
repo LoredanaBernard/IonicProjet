@@ -13,15 +13,20 @@
 </ion-header>
 
 
-<ion-content padding>
-    <ion-label>Image</ion-label>
-    <img src="{{imageSrc}}" />
-    <ion-fab right middle>
-        <button ion-fab color="light" (click)='openGallery()'><ion-icon name="images"></ion-icon></button>         
-  </ion-fab>
-  <ion-fab  middle>
-    <button ion-fab color="light" (click)='openCamera()'><ion-icon name="camera"></ion-icon></button>         
-</ion-fab>
+<ion-content padding >
+  <div class="centrer">
+      <ion-label>Veuillez choisir une image</ion-label>
+      <img src="{{imageSrc}}" class="image"/>      
+  
+    <button ion-button icon-only color="light" (click)='openCamera()'>
+      <ion-icon name="camera"></ion-icon>
+    </button>  
+    <button ion-button icon-only color="light" (click)='openGallery()'>
+      <ion-icon name="images"></ion-icon>
+    </button>
+  </div>
+    
+
    
     <ion-fab right bottom>
         <button ion-fab color="light" (click)='onClickPageSuivante3()'><ion-icon name="arrow-dropright"></ion-icon></button>         

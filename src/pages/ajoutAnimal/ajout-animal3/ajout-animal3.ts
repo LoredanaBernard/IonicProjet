@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 import { ProfilPage } from '../../profil/profil';
 import { User } from '../../../model/User';
 import { Animal } from '../../../model/Animal';
@@ -23,7 +23,8 @@ export class AjoutAnimal3Page {
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
-              public toastCtrl: ToastController) {
+              public toastCtrl: ToastController,
+              private alertCtrl: AlertController) {
       this.user = navParams.get("user");
       console.log(`${this.TAG} utilisateur : ${this.user.nom}`);
       this.animal = navParams.get("animal");
@@ -35,7 +36,25 @@ export class AjoutAnimal3Page {
   }
 
   onClickValiderAjout(age:number, s:string){
-    // Récupération des données de la vue 
+    if(age==null || s==null){
+      let alert = this.alertCtrl.create({
+        title: 'Données manquantes',
+        message: 'Tous les champs doivent être remplis.',
+        buttons: [
+          {
+            text: 'OK',
+            role: 'cancel',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          }
+          
+        ]
+      });
+      alert.present();
+    }
+    else {
+       // Récupération des données de la vue 
     this.animal.age =age;
     this.animal.sexe=s;
 
@@ -54,4 +73,6 @@ export class AjoutAnimal3Page {
     });
     toast.present();
   }
+    }   
+   
 }

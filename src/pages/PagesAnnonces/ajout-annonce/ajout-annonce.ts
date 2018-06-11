@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { User } from '../../../model/User';
 import *as firebase from 'firebase';
 import { Annonce } from '../../../model/Annonce';
@@ -21,7 +21,8 @@ export class AjoutAnnoncePage {
   annonce: Annonce;
   ref : firebase.database.Reference; 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public toastCtrl: ToastController,
+    private alertCtrl: AlertController) {
     this.user = navParams.get("user");
     console.log(`${this.TAG} utilisateur_id : ${this.user.id}`);
   }
@@ -31,9 +32,27 @@ export class AjoutAnnoncePage {
   }
 
   onClickPageSuivante(type: string, titre: string){
-    this.annonce = new Annonce();
-    this.annonce.name=titre;
-    this.annonce.type=type;
+    if(type==null || titre==null){
+      let alert = this.alertCtrl.create({
+        title: 'Données manquantes',
+        message: 'Tous les champs doivent être remplis.',
+        buttons: [
+          {
+            text: 'OK',
+            role: 'cancel',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          }
+          
+        ]
+      });
+      alert.present();
+    }
+    else {
+      this.annonce = new Annonce();
+      this.annonce.name=titre;
+      this.annonce.type=type;
 
     if (type == "Animal perdu" || type == "Animal à donner"){
       this.navCtrl.push('AjoutAnnonceAnimal2Page', {user: this.user, annonce : this.annonce});
@@ -41,6 +60,8 @@ export class AjoutAnnoncePage {
     else {
       this.navCtrl.push('AjoutAnnonce2Page', {user: this.user, annonce: this.annonce});
     }
+    }
+    
   }
 
 }

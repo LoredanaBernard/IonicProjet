@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 import { AjoutAnimal3Page } from '../ajout-animal3/ajout-animal3';
 import { User } from '../../../model/User';
 import { Animal } from '../../../model/Animal';
@@ -22,7 +22,8 @@ export class AjoutAnimal2Page {
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
-              public camera: Camera ) {
+              public camera: Camera, private alertCtrl: AlertController,
+              public toastCtrl: ToastController ) {
     this.user = navParams.get("user");
     console.log(`${this.TAG} utilisateur : ${this.user.nom}`);
     this.animal = navParams.get("animal");
@@ -38,11 +39,31 @@ export class AjoutAnimal2Page {
     console.log(`${this.TAG} onCkickPageSuivante: début`);
     this.refIm = firebase.storage().ref('pictures');
 
-    
-   this.animal.image =this.imageSrc;
+    if (this.imageSrc == null){
+      let alert = this.alertCtrl.create({
+        title: 'Données manquantes',
+        message: 'Tous les champs doivent être remplis.',
+        buttons: [
+          {
+            text: 'OK',
+            role: 'cancel',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          }
+          
+        ]
+      });
+      alert.present();
+    }
+    else {
+      this.animal.image =this.imageSrc;
    console.log(`${this.TAG} onCkick image : ${this.animal.image}`);
    this.upload();
    this.navCtrl.push('AjoutAnimal3Page', { user: this.user, animal: this.animal });
+    }
+    
+   
 
   }
   private openCamera(){

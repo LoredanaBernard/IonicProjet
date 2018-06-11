@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController, Nav } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, Nav, AlertController } from 'ionic-angular';
 import { User } from '../../../model/User';
 import { Annonce } from '../../../model/Annonce';
 
@@ -20,7 +20,7 @@ export class AjoutAnnonce2Page {
   annonce: Annonce;
   @ViewChild(Nav) private nav: Nav;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController, private alertCtrl: AlertController) {
     this.user = navParams.get("user");
     this.annonce = navParams.get("annonce");
   }
@@ -30,9 +30,25 @@ export class AjoutAnnonce2Page {
   }
 
   onClickPageSuivante(texte: string){
-    // Ajouter annonce à BDD 
-
-    
+    if(texte==null){
+      let alert = this.alertCtrl.create({
+        title: 'Données manquantes',
+        message: 'Tous les champs doivent être remplis.',
+        buttons: [
+          {
+            text: 'OK',
+            role: 'cancel',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          }
+          
+        ]
+      });
+      alert.present();
+    }
+    else {
+      // Ajouter annonce à BDD 
 
     this.annonce.description = texte;
     this.navCtrl.push('HomePage', {user: this.user});
@@ -44,5 +60,6 @@ export class AjoutAnnonce2Page {
     });
     toast.present();
   }
+    }  
 
 }
