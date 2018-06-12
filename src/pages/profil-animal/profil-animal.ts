@@ -63,6 +63,10 @@ export class ProfilAnimalPage {
           text: 'Oui',
           handler: () => {
             console.log('Animal supprimé');
+            // Suppression des annonces associees
+            this.ref = firebase.database().ref('Annonces/' + this.animal.id_annonce);
+            this.ref.remove();
+            // Suppression de l'animal dans BDD User
             this.ref = firebase.database().ref('User/'+ this.user.id +'/Animal/'+ this.animal.id);
             this.ref.remove();
             let toast = this.toastCtrl.create({

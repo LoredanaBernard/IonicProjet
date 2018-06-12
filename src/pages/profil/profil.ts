@@ -23,6 +23,7 @@ export class ProfilPage {
   user: User;
   nb_animaux: number;
   listAnimaux : Animal[] = [];
+  
   ref : firebase.database.Reference; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

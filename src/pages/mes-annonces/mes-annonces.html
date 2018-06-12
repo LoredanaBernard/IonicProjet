@@ -26,6 +26,10 @@
         <ion-card-content>
           {{annonce.date}}
           {{annonce.description}}
+
+          <ion-fab right>
+              <button ion-fab mini color="light" (click)='onClickModif(annonce)'><ion-icon name="create"></ion-icon></button>
+            </ion-fab>
         </ion-card-content>
       </ion-card>
 

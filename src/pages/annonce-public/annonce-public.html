@@ -1,0 +1,46 @@
+<!--
+  Generated template for the AnnoncePublicPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{this.annonce.type}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list >
+        <ion-item  >
+            <div class="centrer">{{this.annonce.dateString}}</div>
+          <ion-row>
+              <div ><img src="{{this.annonce.image}}" class="image"/></div>        
+          </ion-row>
+    
+            <div class="centrer">{{this.annonce.description}}</div>
+            
+                
+        </ion-item>
+        <br>
+        <br>
+        <ion-col class="centrer"> 
+            <button ion-button icon-left clear small (click)='modifNbVus(annonce)'>
+              <ion-icon name="eye"></ion-icon>
+              <div>{{annonce.nb_vus}} Vus</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small (click)='onClickGoComment(annonce)'>
+              <ion-icon name="text"></ion-icon>
+              <div>{{annonce.nb_comment}} Comments</div>
+            </button>
+          </ion-col>
+      </ion-list>
+ 
+
+  
+</ion-content>

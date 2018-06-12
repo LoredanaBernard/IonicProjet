@@ -4,6 +4,12 @@ ion-app._gmaps_cdv_ .nav-decor{
   
   page-test {
       #map {
-          height: 100%;
+          height: 50%;
       }
+      .centrer{
+        text-align: center;
+        vertical-align: middle;
+        
+    }
+
   }

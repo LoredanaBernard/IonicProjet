@@ -5,14 +5,28 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>test</ion-title>
-  </ion-navbar>
+    <ion-toolbar  hideBackButton color="primary">
+        <button ion-button menuToggle left>
+          <ion-icon name="menu"></ion-icon>      
+        </button>
+        <ion-title>
+          Vétérinaire
+        </ion-title>
+        <ion-buttons end>      
+          <img src="assets/imgs/veterinaire.png" height="35"/>
+      </ion-buttons>
+      </ion-toolbar> 
 
 </ion-header>
 
 
 <ion-content>
   <div #map id="map"></div> 
+  <br>
+  <div padding class="centrer">Adresse du vétérinaire</div>
+  <br>
+  <button ion-button middle>
+      <ion-icon name='phone-portrait' is-active="false"></ion-icon>
+      Contacter
+</button>
 </ion-content>

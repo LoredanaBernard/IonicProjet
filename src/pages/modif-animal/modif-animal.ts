@@ -35,6 +35,6 @@ export class ModifAnimalPage {
       nom :nom,
       age: age
   });
-  this.navCtrl.push('ProfilPage', {user : this.user});
+  this.navCtrl.push('MesAnnoncesPage', {user : this.user});
   }
 }

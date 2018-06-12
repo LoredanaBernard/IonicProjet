@@ -11,9 +11,28 @@
 
 
 <ion-content padding>
-    <img src="{{this.annonce.image}}" class="image" >
-    <div>{{this.annonce.description}}</div>
+    <ion-list >
+        <ion-item  >
+            <div class="centrer">{{this.annonce.dateString}}</div>
+          <ion-row>
+              <div ><img src="{{this.annonce.image}}" class="image"/></div>        
+          </ion-row>
+    
+            <div class="centrer">{{this.annonce.description}}</div>
+            
+                
+        </ion-item>
+      </ion-list>
 
+    <ion-fab right bottom>
+        <button ion-fab color="light"><ion-icon name="brush"></ion-icon></button>
+        <ion-fab-list side="top">
+          <button ion-fab color="primary" (click)='onClickModifAnnonce(annonce)'><ion-icon name="create"></ion-icon></button>
+        </ion-fab-list>
+        <ion-fab-list side="left">
+          <button ion-fab color="secondary" (click)='onClickRemoveAnnonce(annonce)'><ion-icon name="trash"></ion-icon></button>
+        </ion-fab-list>          
+  </ion-fab>
       
 
 </ion-content>

@@ -58,7 +58,7 @@ export class AnnoncesPage {
   }
 
   onClickAnnonce(annonce: Annonce){
-    this.navCtrl.push('AnnoncePage', {user: this.user, annonce: annonce});
+    this.navCtrl.push('AnnoncePublicPage', {user: this.user, annonce: annonce});
   }
   
 
@@ -74,7 +74,7 @@ export class AnnoncesPage {
   modifNbVus(annonce:Annonce){
     console.log(`${this.TAG} modifNbVus(): ${annonce.nb_vus}`);
     console.log(`${this.TAG} modifNbVus() id-annonce: ${annonce.id}`);
-    annonce.nb_vus = 2;
+    annonce.nb_vus = annonce.nb_vus + 1;
     annonce.reference = firebase.database().ref('Annonces/'+ annonce.id);
     annonce.reference.update({
         vus:annonce.nb_vus

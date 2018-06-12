@@ -7,6 +7,7 @@ export class Animal{
     type: string;
     age: number;
     sexe: string;
+    id_annonce: number;
 
     reference: firebase.database.Reference;
 
@@ -20,6 +21,7 @@ export class Animal{
             type : this.type,
             age : this.age,
             gender : this.sexe
+            
 
         });
     }

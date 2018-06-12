@@ -86,7 +86,7 @@ export class AjoutAnnonceAnimal2Page {
     console.log(`${this.TAG} Date ${this.annonce.date}`);
 
     // Ajouter annonce à BDD 
-    this.annonce.creerAnnonce(this.user);
+    this.annonce.creerAnnonce(this.user, nom_animal);
     // Retour à pages des annonces // ne marche pas 
     this.navCtrl.push('AnnoncesPage', {user: this.user});
 

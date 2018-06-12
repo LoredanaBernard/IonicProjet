@@ -1,5 +1,6 @@
 import *as firebase from 'firebase';
 import { User } from './User';
+import { Animal } from './Animal';
 export class Annonce{
   /*  dateNow: Date;
     timeNow;
@@ -24,7 +25,7 @@ export class Annonce{
     referenceUser: firebase.database.Reference;
     listAnnonces: Annonce[] = [];
 
-    creerAnnonce(user: User){       
+    creerAnnonce(user: User,nom_animal: string){       
         //Creation de l'id
        this.creerId();
 
@@ -32,7 +33,7 @@ export class Annonce{
        this.formaterDate();
 
         // Ajout de l'annonce à la BDD dans Annonces
-        this.reference = firebase.database().ref('Annonces/'+ this.id);
+        this.reference = firebase.database().ref('Annonces/'+ this.id );
         this.reference.set({
             id : this.id,
             auteur: user.id,
@@ -51,6 +52,12 @@ export class Annonce{
         this.referenceUser.set({
             id_annonce : this.id,
             date_annonce: this.date
+        });
+
+        // Ajout de l'id de l'annonce à l'animal
+        this.referenceUser = firebase.database().ref('User/'+ user.id +'/Animal/' + user.id +'_'+nom_animal);
+        this.referenceUser.set({
+            id_annonce : this.id,
         });
 
     }
