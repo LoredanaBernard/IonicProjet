@@ -27,18 +27,22 @@
         </ion-item>
         <br>
         <br>
-        <ion-col class="centrer"> 
-            <button ion-button icon-left clear small (click)='modifNbVus(annonce)'>
-              <ion-icon name="eye"></ion-icon>
-              <div>{{annonce.nb_vus}} Vus</div>
-            </button>
-          </ion-col>
-          <ion-col>
-            <button ion-button icon-left clear small (click)='onClickGoComment(annonce)'>
-              <ion-icon name="text"></ion-icon>
-              <div>{{annonce.nb_comment}} Comments</div>
-            </button>
-          </ion-col>
+         
+          <div class="centrer">
+              <ion-col>
+              <button ion-button icon-left clear small (click)='modifNbVus(annonce)'>
+                  <ion-icon name="eye"></ion-icon>
+                  <div>{{annonce.nb_vus}} Vus</div>
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button icon-left clear small (click)='onClickGoComment(annonce)'>
+                  <ion-icon name="text"></ion-icon>
+                  <div>{{annonce.nb_comment}} Comments</div>
+                </button>
+              </ion-col>
+          </div>            
+          
       </ion-list>
  
 
